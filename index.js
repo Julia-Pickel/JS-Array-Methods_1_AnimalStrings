@@ -21,15 +21,13 @@ const animalStrings = [
   "rhino",
 ];
 
-// --- Array.icludes()-method
+// Task 1
 const hippoExists = animalStrings.includes("hippo");
 console.log("Hippo exists: ", hippoExists);
 
-// ------------------------------
-
-// --- Array.find()-method
+// Task 2
 // Hint: You can pass the starting index as second parameter.
-const catStartingFromIndexFiveExists = animalStrings.find(
+const catStartingFromIndexFiveExists = animalStrings.includes(
   (animal, index) => index >= 5 && animal === "cat"
 );
 console.log(
@@ -37,11 +35,9 @@ console.log(
   catStartingFromIndexFiveExists
 );
 
-// ------------------------------
-
-// --- Array.findIndex()-method
+// Task 3
 // Hint: Besides the array method, check out the string method `startsWith()`.
-const firstAnimalStartingWithLetterP = animalStrings.findIndex((animal) =>
+const firstAnimalStartingWithLetterP = animalStrings.find((animal) =>
   animal.startsWith("p")
 );
 console.log("Animal with Letter P: ", firstAnimalStartingWithLetterP);
@@ -49,9 +45,7 @@ console.log("Animal with Letter P: ", firstAnimalStartingWithLetterP);
 const indexOfGiraffe = animalStrings.indexOf("giraffe");
 console.log("Index of Giraffe: ", indexOfGiraffe);
 
-// ------------------------------
-
-// --- Array.sort()-method
+// Task 4
 // Note:
 // - Sorting strings is slightly more complicated than sorting numbers.
 // - You will need if-statements and return values of -1, 1, and 0.
@@ -63,18 +57,14 @@ console.log("Index of Giraffe: ", indexOfGiraffe);
 const animalsSortedAlphabetically = animalStrings.slice().sort();
 console.log("Animals sorted alphabetically: ", animalsSortedAlphabetically);
 
-// ------------------------------
-
-// --- Array.some()-method
+// Task 5
 // Hint: Guess what? There is a string method called `endsWith()`.
 const anyAnimalEndsWithLetterZ = animalStrings.some((animal) =>
   animal.endsWith("z")
 );
 console.log("Animal ends with Letter Z: ", anyAnimalEndsWithLetterZ);
 
-// ------------------------------
-
-// --- Array.every()-method
+// Task 6
 const everyAnimalHasMoreThanTwoLetters = animalStrings.every(
   (animal) => animal.length > 2
 );
@@ -83,10 +73,9 @@ console.log(
   everyAnimalHasMoreThanTwoLetters
 );
 
-// ------------------------------
-
-// --- Array.reduce()-method
+// Task 7
 // Hint: There are several ways to go here. Let's focus on two options:
+
 // Option 1: Concatenate all characters with `reduce()` and check for the `length` property of the result.
 const sumOfAllAnimalCharacters1 = animalStrings
   .map((animal) => animal.length)
@@ -98,16 +87,11 @@ console.log(
 
 // Option 2: Use `map()` to create an array with the length values of all strings,
 // 				then sum them up with `reduce()` (keyword: method chaining)
-const sumOfAllAnimalCharacters2 = animalStrings.reduce(
-  (accumulator, animal) => accumulator + animal,
-  ""
-).length;
+const sumOfAllAnimalCharacters2 = animalStrings.reduce((a, b) => a + b).length;
 console.log(
   "Option 2 - Sum of all animal characters: ",
   sumOfAllAnimalCharacters2
 );
-
-// ------------------------------
 
 export {
   hippoExists,
