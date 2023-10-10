@@ -51,6 +51,7 @@ console.log("Index of Giraffe: ", indexOfGiraffe);
 
 // ------------------------------
 
+// --- Array.sort()-method
 // Note:
 // - Sorting strings is slightly more complicated than sorting numbers.
 // - You will need if-statements and return values of -1, 1, and 0.
@@ -62,12 +63,18 @@ console.log("Index of Giraffe: ", indexOfGiraffe);
 const animalsSortedAlphabetically = animalStrings.slice().sort();
 console.log("Animals sorted alphabetically: ", animalsSortedAlphabetically);
 
+// ------------------------------
+
+// --- Array.some()-method
 // Hint: Guess what? There is a string method called `endsWith()`.
 const anyAnimalEndsWithLetterZ = animalStrings.some((animal) =>
   animal.endsWith("z")
 );
 console.log("Animal ends with Letter Z: ", anyAnimalEndsWithLetterZ);
 
+// ------------------------------
+
+// --- Array.every()-method
 const everyAnimalHasMoreThanTwoLetters = animalStrings.every(
   (animal) => animal.length > 2
 );
@@ -76,6 +83,9 @@ console.log(
   everyAnimalHasMoreThanTwoLetters
 );
 
+// ------------------------------
+
+// --- Array.reduce()-method
 // Hint: There are several ways to go here. Let's focus on two options:
 // Option 1: Concatenate all characters with `reduce()` and check for the `length` property of the result.
 const sumOfAllAnimalCharacters1 = animalStrings
@@ -96,6 +106,8 @@ console.log(
   "Option 2 - Sum of all animal characters: ",
   sumOfAllAnimalCharacters2
 );
+
+// ------------------------------
 
 export {
   hippoExists,
